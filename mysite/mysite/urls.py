@@ -27,12 +27,13 @@ urlpatterns = [
     path('myauth/', include('myauth.urls')),
     path('blog/', include('blogapp.urls')),
 
-    path(
-        "sitemap.xml",
-        sitemap,
-        {"sitemaps": sitemaps},
-        name="django.contrib.sitemaps.views.sitemap",
-    )
+    # path(
+    #     "sitemap.xml",
+    #     sitemap,
+    #     {"sitemaps": sitemaps},
+    #     name="django.contrib.sitemaps.views.sitemap",
+    # )
+    # чтобы включить django-toolbar раскоментируй все
 ]
 
 if settings.DEBUG:
@@ -44,6 +45,6 @@ if settings.DEBUG:
         static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     )
 
-    urlpatterns.append(
-        path('__debug__/', include('debug_toolbar.urls')),
-    )
+    # urlpatterns.append(
+    #     path('__debug__/', include('debug_toolbar.urls')),
+    # )
